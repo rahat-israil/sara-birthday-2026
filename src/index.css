@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    background-color: #07040f;
+    color: #faf5ff;
+    overflow-x: clip;
+    overflow-y: auto;
+    -webkit-tap-highlight-color: transparent;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(44, 21, 74, 0.48) #07040f;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #07040f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(44, 21, 74, 0.48);
+    border-radius: 9999px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(74, 36, 122, 0.72);
+  }
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-sans-ui {
+  font-family: var(--font-sans);
+}
+
+/* Realistic Candle Flame Flicker */
+@keyframes flame-flicker {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1, 1) rotate(-1.5deg);
+    opacity: 0.96;
+  }
+  20% {
+    transform: translate3d(0.4px, -0.8px, 0) scale(0.96, 1.06) rotate(2deg);
+    opacity: 1;
+  }
+  45% {
+    transform: translate3d(-0.5px, -0.4px, 0) scale(1.04, 0.95) rotate(-2.5deg);
+    opacity: 0.92;
+  }
+  70% {
+    transform: translate3d(0.3px, -1px, 0) scale(0.98, 1.08) rotate(1.5deg);
+    opacity: 1;
+  }
+}
+
+@keyframes flame-halo-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.72;
+  }
+  50% {
+    transform: scale(1.16);
+    opacity: 0.95;
+  }
+}
+
+/* Sparkle Twinkle */
+@keyframes sparkle-twinkle {
+  0%,
+  100% {
+    transform: scale(0.55) rotate(0deg);
+    opacity: 0.25;
+  }
+  50% {
+    transform: scale(1.15) rotate(25deg);
+    opacity: 0.95;
+  }
+}
+
+/* Gentle Floating Heart Upward */
+@keyframes float-heart-up {
+  0% {
+    transform: translate3d(0, 18px, 0) scale(0.65) rotate(-6deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.9;
+  }
+  55% {
+    transform: translate3d(10px, -60px, 0) scale(1) rotate(8deg);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translate3d(-8px, -145px, 0) scale(0.8) rotate(-5deg);
+    opacity: 0;
+  }
+}
+
+/* Ambient Golden Star Drift */
+@keyframes ambient-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.35;
+  }
+  50% {
+    transform: translate3d(6px, -14px, 0) scale(1.25);
+    opacity: 0.9;
+  }
+}
+
+/* Table Shimmer Sweep */
+@keyframes shimmer-sweep {
+  0% {
+    transform: translate3d(-100%, 0, 0);
+    opacity: 0;
+  }
+  30% {
+    opacity: 0.65;
+  }
+  100% {
+    transform: translate3d(120%, 0, 0);
+    opacity: 0;
+  }
+}
+
+/* Button Subtle Glow Pulse */
+@keyframes cta-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 22px rgba(244, 63, 94, 0.35), 0 0 48px rgba(245, 197, 107, 0.22);
+  }
+  50% {
+    box-shadow: 0 0 32px rgba(244, 63, 94, 0.55), 0 0 68px rgba(245, 197, 107, 0.38);
+  }
+}
+
+.animate-flame-flicker {
+  animation: flame-flicker 1.35s ease-in-out infinite;
+  transform-origin: 50% 90%;
+}
+
+.animate-flame-halo {
+  animation: flame-halo-pulse 1.8s ease-in-out infinite;
+}
+
+.animate-sparkle-twinkle {
+  animation: sparkle-twinkle 2.4s ease-in-out infinite;
+}
+
+.animate-float-heart {
+  animation: float-heart-up 4.6s ease-out infinite;
+}
+
+.animate-ambient-drift {
+  animation: ambient-drift 5.5s ease-in-out infinite;
+}
+
+.animate-cta-glow {
+  animation: cta-glow 2.8s ease-in-out infinite;
+}
+
+/* Reduced Motion Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .animate-flame-flicker,
+  .animate-flame-halo,
+  .animate-sparkle-twinkle,
+  .animate-float-heart,
+  .animate-ambient-drift,
+  .animate-cta-glow {
+    animation: none !important;
+  }
+}
+
+.reduced-motion .animate-flame-flicker,
+.reduced-motion .animate-flame-halo,
+.reduced-motion .animate-sparkle-twinkle,
+.reduced-motion .animate-float-heart,
+.reduced-motion .animate-ambient-drift,
+.reduced-motion .animate-cta-glow {
+  animation: none !important;
+}

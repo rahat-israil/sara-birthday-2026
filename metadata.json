@@ -1,0 +1,6 @@
+{
+  "name": "Princess Birthday Surprise",
+  "description": "An interactive archery challenge and magical progressive birthday celebration surprise.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
